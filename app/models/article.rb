@@ -1,7 +1,7 @@
 class Article
 
     @@all = []
-    attr_reader :author, :magazine, :title
+    attr_reader  :magazine, :title
     # class method
     def self.all 
         @@all
