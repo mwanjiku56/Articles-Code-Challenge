@@ -7,7 +7,7 @@ class Author
   
   end
   def articles
-    Article.all.filter{|article|article.author == @name}
+    Article.all.select{|article|article.author == self.name}
   end
   def magazines
     articles.map{|article|article.magazine}.uniq
