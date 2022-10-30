@@ -23,7 +23,7 @@ class Author
     # map through and filter
     popular_authors = Article.all.filter{|article|article.magazine.name== @name}
     .map{|article|article.author.name}
-    .tally.each{|key,| value > 2}
+    .tally.each{|key,value| value > 2}
     popular_authors
   end
 
