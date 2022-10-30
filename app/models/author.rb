@@ -19,6 +19,7 @@ class Author
     magazines.collect{|magazine|magazine.category}.uniq
   end
   def contributing_authors
+    # tally: authors
     popular_authors = Article.all.filter{|article|article.magazine.name== @name}.map{|article|article.author.name}.tally.each{|key, value| value > 2}
     popular_authors
   end
