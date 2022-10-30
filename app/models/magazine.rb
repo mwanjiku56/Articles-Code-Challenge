@@ -13,8 +13,8 @@ class Magazine
     
 
   end
-  def contributers
-    
+  def contributors
+    Article.all.filter{|article|article.magazine.name==@name}.map{|article|article.author}.uniq
   end
 
 
