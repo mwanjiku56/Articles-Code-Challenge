@@ -21,7 +21,7 @@ class Magazine
       magazine.name == name}
   end
   def articles_by_title
-    
+    Article.all.filter{|article|article.magazine.name==@name}.map{|article|article.title}
   end
 
 
