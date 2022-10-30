@@ -20,6 +20,9 @@ class Magazine
     Magazine.all.find{|magazine|
       magazine.name == name}
   end
+  def articles_by_title
+    
+  end
 
 
 end
