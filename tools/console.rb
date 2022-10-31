@@ -16,6 +16,9 @@ article3=Article.new(author,magazine1,"Just title")
 author.add_article(magazine1,"another title")
 author.add_article(magazine2,"newest title")
 author.add_article(magazine3,"another new title")
+author.add_article(magazine2,"what a title")
+author.add_article(magazine2,"great title")
+author.add_article(magazine2,"best title")
 
 
 
