@@ -10,18 +10,22 @@ class Magazine
     @name = name
     @category = category
     @@all << self
-    
-
+  end
+  def magazine_articles
+    Article.all.filter{|article|article.magazine.name==@name}
   end
   def contributors
-    Article.all.filter{|article|article.magazine.name==@name}.map{|article|article.author}.uniq
+    magazine_articles.map{|article|article.author}.uniq
   end
   def self.find_by_name(name)
     Magazine.all.find{|magazine|
       magazine.name == name}
   end
   def articles_by_title
-    Article.all.filter{|article|article.magazine.name==@name}.map{|article|article.title}
+    magazine_articles.map{|article|article.title}
+  end
+  def contributing_authors
+
   end
 
 
