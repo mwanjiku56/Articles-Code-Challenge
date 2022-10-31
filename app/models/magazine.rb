@@ -28,6 +28,7 @@ class Magazine
     all_authors = []
     magazine_articles.map{|article|article.author}
     .tally.each{|key,value|value>2 && (all_authors << key)}
+    all_authors
   end
 
 
