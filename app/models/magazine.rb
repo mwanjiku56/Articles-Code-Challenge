@@ -11,22 +11,27 @@ class Magazine
     @category = category
     @@all << self
   end
-  def magazine_articles
+  
+  def magazine_by_articles
     Article.all.filter{|article|article.magazine.name==@name}
   end
+
   def contributors
-    magazine_articles.map{|article|article.author}.uniq
+    magazine_by_articles.map{|article|article.author}.uniq
   end
+
   def self.find_by_name(name)
     Magazine.all.find{|magazine|
       magazine.name == name}
   end
+
   def articles_by_title
-    magazine_articles.map{|article|article.title}
+    magazine_by_articles.map{|article|article.title}
   end
+
   def contributing_authors
     all_main_authors = []
-    magazine_articles.map{|article|article.author}
+    magazine_by_articles.map{|article|article.author}
     .tally.each{|key,value|value>2 && (all_main_authors << key)}
     all_main_authors
   end
